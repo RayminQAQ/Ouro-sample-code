@@ -3,9 +3,10 @@ from transformers import AutoConfig
 
 model_name = "ByteDance/Ouro-1.4B"
 
+# Use config to modify model settings
 config = AutoConfig.from_pretrained("ByteDance/Ouro-1.4B")
 config.total_ut_steps = 3  # Use 3 recurrent steps instead of 4
-config.use_cache = False
+config.use_cache = False # Disable cache for generation since we got: AttributeError: property 'key_cache' of 'UniversalTransformerCache' object has no setter
 config.trust_remote_code = True
 
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
