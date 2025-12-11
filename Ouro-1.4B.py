@@ -1,3 +1,4 @@
+# Enter: !exec(open("debug.py").read()) in python debuger
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from transformers import AutoConfig
 
